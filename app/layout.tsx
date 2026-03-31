@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'MediTrust - Healthcare Consultation Platform',
+  description: 'Connect with doctors for instant consultations, AI-powered symptom analysis, and secure medical records management.',
   generator: 'v0.app',
   icons: {
     icon: [
