@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useRouter } from 'next/navigation'
 import { Spinner } from '@/components/ui/spinner'
+import { Navbar } from '@/components/navbar'
 
 interface Doctor {
   id: string
@@ -84,8 +85,10 @@ export default function DoctorsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-2">Browse Doctors</h1>
         <p className="text-muted-foreground mb-8">
           Connect with qualified healthcare professionals for consultations
@@ -149,6 +152,6 @@ export default function DoctorsPage() {
           </div>
         )}
       </div>
-    </div>
+    </>
   )
 }

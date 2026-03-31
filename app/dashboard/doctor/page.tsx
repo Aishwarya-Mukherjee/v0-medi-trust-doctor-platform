@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import Link from 'next/link'
+import { Navbar } from '@/components/navbar'
 
 export default function DoctorDashboardPage() {
   const [user, setUser] = useState<any>(null)
@@ -52,8 +53,10 @@ export default function DoctorDashboardPage() {
   }
 
   return (
-    <div className="min-h-svh bg-gradient-to-br from-green-50 to-emerald-100">
-      <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
+    <>
+      <Navbar />
+      <div className="min-h-svh bg-gradient-to-br from-green-50 to-emerald-100">
+        <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -139,6 +142,6 @@ export default function DoctorDashboardPage() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   )
 }

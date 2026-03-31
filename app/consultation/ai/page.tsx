@@ -8,6 +8,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Spinner } from '@/components/ui/spinner'
+import { Navbar } from '@/components/navbar'
 
 export default function AIConsultationPage() {
   const router = useRouter()
@@ -46,8 +47,10 @@ export default function AIConsultationPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <div className="border-b bg-background">
+    <>
+      <Navbar />
+      <div className="flex min-h-screen flex-col">
+        <div className="border-b bg-background">
         <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold">AI Medical Assistant</h1>
           <p className="text-sm text-muted-foreground">
@@ -121,6 +124,6 @@ export default function AIConsultationPage() {
           </form>
         </div>
       </div>
-    </div>
+    </>
   )
 }

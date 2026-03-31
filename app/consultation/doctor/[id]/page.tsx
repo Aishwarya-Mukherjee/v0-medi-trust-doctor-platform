@@ -7,6 +7,7 @@ import { TextConsultation } from '@/components/text-consultation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
+import { Navbar } from '@/components/navbar'
 
 interface Doctor {
   id: string
@@ -101,8 +102,10 @@ export default function DoctorConsultationPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="flex flex-col lg:flex-row h-screen">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background">
+        <div className="flex flex-col lg:flex-row h-screen">
         {/* Sidebar with doctor info */}
         <div className="lg:w-80 border-r bg-card p-6">
           <Button
@@ -149,6 +152,6 @@ export default function DoctorConsultationPage() {
           />
         </div>
       </div>
-    </div>
+    </>
   )
 }

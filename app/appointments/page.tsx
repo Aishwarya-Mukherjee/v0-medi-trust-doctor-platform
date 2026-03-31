@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useRouter } from 'next/navigation'
 import { Spinner } from '@/components/ui/spinner'
+import { Navbar } from '@/components/navbar'
 
 interface TimeSlot {
   date: string
@@ -140,8 +141,10 @@ export default function AppointmentsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-2">Appointments</h1>
         <p className="text-muted-foreground mb-8">
           Book and manage your doctor appointments
@@ -276,6 +279,6 @@ export default function AppointmentsPage() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

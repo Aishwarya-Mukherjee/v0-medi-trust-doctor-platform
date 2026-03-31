@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useRouter } from 'next/navigation'
 import { Spinner } from '@/components/ui/spinner'
+import { Navbar } from '@/components/navbar'
 
 interface MedicalRecord {
   id: string
@@ -109,8 +110,10 @@ export default function MedicalRecordsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-8">
         <h1 className="text-3xl font-bold mb-2">Medical Records</h1>
         <p className="text-muted-foreground mb-8">
           Manage and organize your medical documents
@@ -221,6 +224,6 @@ export default function MedicalRecordsPage() {
           )}
         </div>
       </div>
-    </div>
+    </>
   )
 }
