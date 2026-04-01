@@ -158,65 +158,65 @@ export default function AppointmentsPage() {
                   <CardTitle>Book Appointment</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                <div className="grid gap-2">
-                  <label className="text-sm font-medium">Select Doctor</label>
-                  <select
-                    value={selectedDoctor || ''}
-                    onChange={(e) => setSelectedDoctor(e.target.value)}
-                    className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  <div className="grid gap-2">
+                    <label className="text-sm font-medium">Select Doctor</label>
+                    <select
+                      value={selectedDoctor || ''}
+                      onChange={(e) => setSelectedDoctor(e.target.value)}
+                      className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <option value="">Choose a doctor...</option>
+                      {availableDoctors.map((doc) => (
+                        <option key={doc.id} value={doc.id}>
+                          Dr. {doc.first_name} {doc.last_name}
+                        </option>
+                      ))}
+                    </select>
+                    </div>
+
+                  <div className="grid gap-2">
+                    <label className="text-sm font-medium">Select Date</label>
+                    <input
+                      type="date"
+                      value={selectedDate}
+                      onChange={(e) => setSelectedDate(e.target.value)}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    />
+                  </div>
+
+                  <div className="grid gap-2">
+                    <label className="text-sm font-medium">Select Time</label>
+                    <select
+                      value={selectedTime}
+                      onChange={(e) => setSelectedTime(e.target.value)}
+                      className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <option value="">Choose a time...</option>
+                      {generateTimeSlots().map((slot) => (
+                        <option key={slot} value={slot}>
+                          {slot}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {error && <p className="text-sm text-red-500">{error}</p>}
+
+                  <Button
+                    onClick={handleBookAppointment}
+                    disabled={isBooking}
+                    className="w-full"
                   >
-                    <option value="">Choose a doctor...</option>
-                    {availableDoctors.map((doc) => (
-                      <option key={doc.id} value={doc.id}>
-                        Dr. {doc.first_name} {doc.last_name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="grid gap-2">
-                  <label className="text-sm font-medium">Select Date</label>
-                  <input
-                    type="date"
-                    value={selectedDate}
-                    onChange={(e) => setSelectedDate(e.target.value)}
-                    min={new Date().toISOString().split('T')[0]}
-                    className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  />
-                </div>
-
-                <div className="grid gap-2">
-                  <label className="text-sm font-medium">Select Time</label>
-                  <select
-                    value={selectedTime}
-                    onChange={(e) => setSelectedTime(e.target.value)}
-                    className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <option value="">Choose a time...</option>
-                    {generateTimeSlots().map((slot) => (
-                      <option key={slot} value={slot}>
-                        {slot}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {error && <p className="text-sm text-red-500">{error}</p>}
-
-                <Button
-                  onClick={handleBookAppointment}
-                  disabled={isBooking}
-                  className="w-full"
-                >
-                  {isBooking ? (
-                    <>
-                      <Spinner className="h-4 w-4 mr-2" />
-                      Booking...
-                    </>
-                  ) : (
-                    'Book Appointment'
-                  )}
-                </Button>
+                    {isBooking ? (
+                      <>
+                        <Spinner className="h-4 w-4 mr-2" />
+                        Booking...
+                      </>
+                    ) : (
+                      'Book Appointment'
+                    )}
+                  </Button>
               </CardContent>
             </Card>
           </div>

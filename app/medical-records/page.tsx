@@ -126,58 +126,58 @@ export default function MedicalRecordsPage() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleFileUpload} className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="grid gap-2">
-                  <Label htmlFor="recordType">Record Type</Label>
-                  <select
-                    id="recordType"
-                    value={recordType}
-                    onChange={(e) => setRecordType(e.target.value)}
-                    className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <option value="prescription">Prescription</option>
-                    <option value="lab_report">Lab Report</option>
-                    <option value="x_ray">X-Ray</option>
-                    <option value="scan">Scan/MRI</option>
-                    <option value="vaccination">Vaccination Record</option>
-                    <option value="other">Other</option>
-                  </select>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="grid gap-2">
+                    <Label htmlFor="recordType">Record Type</Label>
+                    <select
+                      id="recordType"
+                      value={recordType}
+                      onChange={(e) => setRecordType(e.target.value)}
+                      className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      <option value="prescription">Prescription</option>
+                      <option value="lab_report">Lab Report</option>
+                      <option value="x_ray">X-Ray</option>
+                      <option value="scan">Scan/MRI</option>
+                      <option value="vaccination">Vaccination Record</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="file">Select File</Label>
+                    <Input
+                      id="file"
+                      type="file"
+                      ref={fileInputRef}
+                      accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                      disabled={isUploading}
+                    />
+                  </div>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="file">Select File</Label>
+                  <Label htmlFor="description">Description (Optional)</Label>
                   <Input
-                    id="file"
-                    type="file"
-                    ref={fileInputRef}
-                    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                    id="description"
+                    placeholder="Add notes about this record..."
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     disabled={isUploading}
                   />
                 </div>
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="description">Description (Optional)</Label>
-                <Input
-                  id="description"
-                  placeholder="Add notes about this record..."
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  disabled={isUploading}
-                />
-              </div>
-              {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" disabled={isUploading} className="w-full">
-                {isUploading ? (
-                  <>
-                    <Spinner className="h-4 w-4 mr-2" />
-                    Uploading...
-                  </>
-                ) : (
-                  'Upload Record'
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+                {error && <p className="text-sm text-red-500">{error}</p>}
+                <Button type="submit" disabled={isUploading} className="w-full">
+                  {isUploading ? (
+                    <>
+                      <Spinner className="h-4 w-4 mr-2" />
+                      Uploading...
+                    </>
+                  ) : (
+                    'Upload Record'
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
 
         {/* Records List */}
         <div>

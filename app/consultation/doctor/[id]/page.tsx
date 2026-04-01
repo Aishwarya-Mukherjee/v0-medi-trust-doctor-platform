@@ -117,26 +117,26 @@ export default function DoctorConsultationPage() {
             </Button>
             <Card>
               <CardHeader>
-              <CardTitle className="text-xl">
-                Dr. {doctor.first_name} {doctor.last_name}
-              </CardTitle>
-              <p className="text-sm text-muted-foreground mt-2">
-                {doctor.specialization}
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Status</p>
-                  <p className="font-semibold">Available</p>
+                <CardTitle className="text-xl">
+                  Dr. {doctor.first_name} {doctor.last_name}
+                </CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {doctor.specialization}
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Status</p>
+                    <p className="font-semibold">Available</p>
+                  </div>
+                  <Button className="w-full" variant="outline">
+                    End Consultation
+                  </Button>
                 </div>
-                <Button className="w-full" variant="outline">
-                  End Consultation
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+              </CardContent>
+            </Card>
+          </div>
 
         {/* Chat area */}
         <div className="flex-1 flex flex-col">
