@@ -145,19 +145,19 @@ export default function AppointmentsPage() {
       <Navbar />
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-2">Appointments</h1>
-        <p className="text-muted-foreground mb-8">
-          Book and manage your doctor appointments
-        </p>
+          <h1 className="text-3xl font-bold mb-2">Appointments</h1>
+          <p className="text-muted-foreground mb-8">
+            Book and manage your doctor appointments
+          </p>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {/* Booking Form */}
-          <div className="md:col-span-1">
-            <Card>
-              <CardHeader>
-                <CardTitle>Book Appointment</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Booking Form */}
+            <div className="md:col-span-1">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Book Appointment</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
                 <div className="grid gap-2">
                   <label className="text-sm font-medium">Select Doctor</label>
                   <select

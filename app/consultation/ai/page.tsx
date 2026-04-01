@@ -51,11 +51,12 @@ export default function AIConsultationPage() {
       <Navbar />
       <div className="flex min-h-screen flex-col">
         <div className="border-b bg-background">
-        <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold">AI Medical Assistant</h1>
-          <p className="text-sm text-muted-foreground">
-            Describe your symptoms and I&apos;ll provide guidance
-          </p>
+          <div className="mx-auto max-w-2xl px-4 py-4 sm:px-6 lg:px-8">
+            <h1 className="text-2xl font-bold">AI Medical Assistant</h1>
+            <p className="text-sm text-muted-foreground">
+              Describe your symptoms and I&apos;ll provide guidance
+            </p>
+          </div>
         </div>
       </div>
 

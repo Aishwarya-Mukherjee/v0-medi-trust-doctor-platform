@@ -89,18 +89,18 @@ export default function DoctorsPage() {
       <Navbar />
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-2">Browse Doctors</h1>
-        <p className="text-muted-foreground mb-8">
-          Connect with qualified healthcare professionals for consultations
-        </p>
+          <h1 className="text-3xl font-bold mb-2">Browse Doctors</h1>
+          <p className="text-muted-foreground mb-8">
+            Connect with qualified healthcare professionals for consultations
+          </p>
 
-        {error && (
-          <Card className="mb-6 border-red-200 bg-red-50">
-            <CardContent className="pt-6">
-              <p className="text-red-800">{error}</p>
-            </CardContent>
-          </Card>
-        )}
+          {error && (
+            <Card className="mb-6 border-red-200 bg-red-50">
+              <CardContent className="pt-6">
+                <p className="text-red-800">{error}</p>
+              </CardContent>
+            </Card>
+          )}
 
         {doctors.length === 0 ? (
           <Card>

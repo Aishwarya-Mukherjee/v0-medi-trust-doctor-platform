@@ -114,18 +114,18 @@ export default function MedicalRecordsPage() {
       <Navbar />
       <div className="min-h-screen bg-background">
         <div className="mx-auto max-w-6xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-2">Medical Records</h1>
-        <p className="text-muted-foreground mb-8">
-          Manage and organize your medical documents
-        </p>
+          <h1 className="text-3xl font-bold mb-2">Medical Records</h1>
+          <p className="text-muted-foreground mb-8">
+            Manage and organize your medical documents
+          </p>
 
-        {/* Upload Form */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Upload Medical Record</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleFileUpload} className="space-y-4">
+          {/* Upload Form */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Upload Medical Record</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleFileUpload} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="grid gap-2">
                   <Label htmlFor="recordType">Record Type</Label>
