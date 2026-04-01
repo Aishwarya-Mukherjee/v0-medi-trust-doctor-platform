@@ -223,6 +223,7 @@ export default function MedicalRecordsPage() {
             </div>
           )}
         </div>
+        </div>
       </div>
     </>
   )

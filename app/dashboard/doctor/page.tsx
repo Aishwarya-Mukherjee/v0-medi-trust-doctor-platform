@@ -141,6 +141,7 @@ export default function DoctorDashboardPage() {
             </p>
           </CardContent>
         </Card>
+        </div>
       </div>
     </>
   )

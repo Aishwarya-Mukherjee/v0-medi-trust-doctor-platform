@@ -151,6 +151,7 @@ export default function DoctorConsultationPage() {
             currentUserId={currentUserId}
           />
         </div>
+        </div>
       </div>
     </>
   )
