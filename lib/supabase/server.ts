@@ -32,3 +32,6 @@ export async function createClient() {
     },
   )
 }
+
+// Export alias for compatibility
+export { createClient as createServerClient }

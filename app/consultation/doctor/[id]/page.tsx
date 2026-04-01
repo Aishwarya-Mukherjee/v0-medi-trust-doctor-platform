@@ -106,37 +106,37 @@ export default function DoctorConsultationPage() {
       <Navbar />
       <div className="min-h-screen bg-background">
         <div className="flex flex-col lg:flex-row h-screen">
-        {/* Sidebar with doctor info */}
-        <div className="lg:w-80 border-r bg-card p-6">
-          <Button
-            variant="ghost"
-            onClick={() => router.push('/doctors')}
-            className="mb-6"
-          >
-            ← Back to Doctors
-          </Button>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">
-                Dr. {doctor.first_name} {doctor.last_name}
-              </CardTitle>
-              <p className="text-sm text-muted-foreground mt-2">
-                {doctor.specialization}
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Status</p>
-                  <p className="font-semibold">Available</p>
+          {/* Sidebar with doctor info */}
+          <div className="lg:w-80 border-r bg-card p-6">
+            <Button
+              variant="ghost"
+              onClick={() => router.push('/doctors')}
+              className="mb-6"
+            >
+              ← Back to Doctors
+            </Button>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">
+                  Dr. {doctor.first_name} {doctor.last_name}
+                </CardTitle>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {doctor.specialization}
+                </p>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Status</p>
+                    <p className="font-semibold">Available</p>
+                  </div>
+                  <Button className="w-full" variant="outline">
+                    End Consultation
+                  </Button>
                 </div>
-                <Button className="w-full" variant="outline">
-                  End Consultation
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+              </CardContent>
+            </Card>
+          </div>
 
         {/* Chat area */}
         <div className="flex-1 flex flex-col">
